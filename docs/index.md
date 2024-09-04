@@ -3,7 +3,7 @@ title: Home
 layout: page
 ---
 
-<a href="Fruits_recognizer.html">Go to Fruits Recognizer</a>
+<a href="fruit_recognizer.html">Go to Fruits Recognizer</a>
 
 # Image Recognizer
 
