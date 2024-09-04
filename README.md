@@ -44,4 +44,4 @@ I deployed to model to HuggingFace Spaces Gradio App. The implementation can be 
 
 # API integration with GitHub Pages
 
-The deployed model API is integrated [here](https://sakibhasanice.github.io/Fruit_recognizer/) in GitHub Pages Website. Implementation and other details can be found in `docs` folder.
+The deployed model API is integrated [here](https://sakibhasanice.github.io/Fruits_Recognization/) in GitHub Pages Website. Implementation and other details can be found in `docs` folder.
