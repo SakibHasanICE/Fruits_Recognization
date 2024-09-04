@@ -1,0 +1,9 @@
+remote_theme: daattali/beautiful-jekyll@master
+plugins:
+  - jekyll-remote-theme
+
+title: Fruits Recognizer
+description: An image classification API that classifies 20 different types of Fruit around the world
+
+author:
+  name: Mohammad Sakib Hasan
