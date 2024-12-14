@@ -13,6 +13,7 @@ layout: page
   </head>
   <body>
     <input type="file" class="form-control" id="photo" accept="image/*" />
+    <div id="results"></div>
     <br /><br />
     <img
       id="preview"
@@ -20,33 +21,9 @@ layout: page
       alt="Selected Image Preview"
       style="max-width: 300px; display: none"
     />
-  <!-- <script>
-    <label class="input-group-text" for="inputGroupFile02">Upload</label> -->
-    <!-- <div id="results"></div> -->
-    <!-- <script>
-    const photo = document.getElementById("photo");
-    const result = document.getElementById("results");
-    async function loaded(reader) {
-      const response = await fetch(
-        "https://sakibice007-fruits-recognization-2.hf.space/--replicas/p6lru/predict",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ data: [reader.result] }),
-        }
-      );
-      const json = await response.json();
-      const label = json["data"][0]["label"];
-      result.innerHTML = `<br/> <img src = "${reader.result}" width="450" height="200"> <p>${label}</p>`;
-    }
-    function read() {
-      const reader = new FileReader();
-      reader.addEventListener("load", () => loaded(reader));
-      reader.readAsDataURL(photo.files[0]);
-    }
-    photo.addEventListener("input", read);
-  </script> -->
-
+    
+    
+    
   <script type="module">
     const photoInput = document.getElementById("photo");
       const preview = document.getElementById("preview");
@@ -88,7 +65,7 @@ layout: page
     photo.addEventListener("input", read);
 
     console.log(result.data);
-  
+
   </script>
   </body>
 </html>
