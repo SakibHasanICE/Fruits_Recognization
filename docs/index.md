@@ -34,7 +34,7 @@ layout: page
   </script> -->
 
   <script type="module">
-    import { client } from "https://cdn.jsdelivr.net/npm/@gradio/client/dist/index.min.js";
+    import { client } from "https://cdn.jsdelivr.net/npm/@gradio/client@0.1.4/dist/index.min.js";
     async function loaded(reader) {
       const app = await client(
         "https://sakibice007-fruits-recognization-2.hf.space/--replicas/p6lru/"
