@@ -3,14 +3,27 @@ title: Home
 layout: page
 ---
 
-
-
 # Image Recognizer
-<html>
-  <input type="file" class="form-control" id="photo" />
-  <!-- <label class="input-group-text" for="inputGroupFile02">Upload</label> -->
-  <div id="results"></div>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <input type="file" class="form-control" id="photo" accept="image/*" />
+    <br /><br />
+    <img
+      id="preview"
+      src=""
+      alt="Selected Image Preview"
+      style="max-width: 300px; display: none"
+    />
   <!-- <script>
+    <label class="input-group-text" for="inputGroupFile02">Upload</label> -->
+    <!-- <div id="results"></div> -->
+    <!-- <script>
     const photo = document.getElementById("photo");
     const result = document.getElementById("results");
     async function loaded(reader) {
@@ -35,6 +48,26 @@ layout: page
   </script> -->
 
   <script type="module">
+    const photoInput = document.getElementById("photo");
+      const preview = document.getElementById("preview");
+
+      photoInput.addEventListener("change", function (event) {
+        const file = event.target.files[0]; // Get the selected file
+        if (file) {
+          const reader = new FileReader();
+
+          // Load the image as a base64 URL
+          reader.onload = function (e) {
+            preview.src = e.target.result; // Set the image src
+            preview.style.display = "block"; // Make the image visible
+          };
+
+          reader.readAsDataURL(file); // Read the file
+        } else {
+          preview.src = ""; // Clear the preview if no file is selected
+          preview.style.display = "none"; // Hide the image
+        }
+      });
     import { client } from "https://cdn.jsdelivr.net/npm/@gradio/client/dist/index.min.js";
     async function loaded(reader) {
       const app = await client(
@@ -55,12 +88,9 @@ layout: page
     photo.addEventListener("input", read);
 
     console.log(result.data);
+  
   </script>
-
-  <!-- const app = await client("https://sakibice007-fruits-recognization-2.hf.space/--replicas/p6lru/");
-  const result = await app.predict("/predict", [
-        exampleImage, 	// blob in 'image' Image component
-  ]); -->
+  </body>
 </html>
 Can classify 20 different types of Fruits <br/>
 The types are following: <br/>
